@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gym/utils/custom_buttons.dart';
 import 'package:gym/utils/custom_textfields.dart';
 import 'package:gym/utils/styles.dart';
 
@@ -16,9 +17,25 @@ class _SignUpState extends State<SignUp> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  bool _readTerms =false;
+  bool _readTerms = false;
   bool _loading = false;
   bool _showPass = false;
+
+  void checkBoxChecked (bool? value, int index){
+    setState(() {
+      _readTerms = value!;
+    });
+  }
+ void _registerUser() {
+    if (_readTerms) {
+      // Proceed with registration logic here
+    } else {
+      // Show an error message or prompt to accept terms
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please accept the terms and conditions')),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -149,11 +166,25 @@ class _SignUpState extends State<SignUp> {
                       hintText: 'Enter Your Password',
                       labelText: 'Password',
                     ),
-                    // Row(
-                    //   children: [
-                    //     CustomTextBox(taskComplete: _readTerms)
-                    //   ],
-                    // )
+                    CustomCheckBox(
+                      taskComplete: _readTerms,
+                      onChanged:(value){
+                        setState(() {
+                          _readTerms = value!;
+                        });
+                      },
+                      taskName: "Agree with ",
+                      richTextName: "Terms & Conditions",
+                    ),
+                    SizedBox(
+                      height:10,
+                    ),
+                    _loading
+                    ? CircularProgressIndicator()
+                        : CustomButtons(
+                      buttonName: "SignUp",
+                      onPressed: _readTerms?_registerUser:null,
+                     ),
                   ],
                 ),
               ),

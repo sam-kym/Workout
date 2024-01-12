@@ -39,6 +39,11 @@ dependencies:
   firebase_core:
   firebase_auth:
   cloud_firestore:
+  location:
+  geolocator:
+  map_launcher:
+  google_maps_flutter:
+  flutter_map:
   path_provider:
   path:
   json_annotation:
