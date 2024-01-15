@@ -36,9 +36,9 @@ class CustomCheckBox extends StatelessWidget {
             children: [
               TextSpan(
                 text: richTextName,
-                style: TextStyle(color: Colors.blue),
+                style: const TextStyle(color: Colors.blue),
                 recognizer: TapGestureRecognizer()
-                .. onTap= () => Navigator.push(context, MaterialPageRoute(builder: (context)=>TermsAndConditions()))
+                .. onTap= () => Navigator.push(context, MaterialPageRoute(builder: (context)=>const TermsAndConditions()))
               )
             ]
           ) )

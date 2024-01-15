@@ -18,7 +18,7 @@ class _SignUpState extends State<SignUp> {
   final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   bool _readTerms = false;
-  bool _loading = false;
+  final bool _loading = false;
   bool _showPass = false;
 
   void checkBoxChecked (bool? value, int index){
@@ -57,7 +57,7 @@ class _SignUpState extends State<SignUp> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: 35),
+                      padding: const EdgeInsets.only(left: 35),
                       child: Text.rich(TextSpan(
                           text: 'Create Account\n',
                           style: poppinsBold.copyWith(fontSize: 30),
@@ -103,14 +103,14 @@ class _SignUpState extends State<SignUp> {
                       hintText: 'John Doe',
                       labelText: 'Name',
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Align(
+                    const Align(
                       alignment: Alignment.centerLeft,
                       child: Text('Email'),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     CustomTextField(
@@ -130,14 +130,14 @@ class _SignUpState extends State<SignUp> {
                       hintText: 'example@gmail.com',
                       labelText: 'Email',
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Align(
+                    const Align(
                       alignment: Alignment.centerLeft,
                       child: Text('Password'),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 7,
                     ),
                     CustomTextField(
@@ -161,9 +161,9 @@ class _SignUpState extends State<SignUp> {
                       },
                       inputType: TextInputType.text,
                       controller: _passwordController,
-                      obscured: !_showPass,
+                      obscured: _showPass,
                       showSuffix: true,
-                      hintText: 'Enter Your Password',
+                      hintText: '***********',
                       labelText: 'Password',
                     ),
                     CustomCheckBox(
@@ -176,11 +176,11 @@ class _SignUpState extends State<SignUp> {
                       taskName: "Agree with ",
                       richTextName: "Terms & Conditions",
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height:10,
                     ),
                     _loading
-                    ? CircularProgressIndicator()
+                    ? const CircularProgressIndicator()
                         : CustomButtons(
                       buttonName: "SignUp",
                       onPressed: _readTerms?_registerUser:null,

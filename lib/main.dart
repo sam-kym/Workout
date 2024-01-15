@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gym/utils/styles.dart';
-import 'package:gym/view/auth/sign_up.dart';
+import 'package:gym/view/auth/password_reset.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +14,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-        theme: appTheme, home: const SignUp());
+        theme: appTheme, home: const PasswordReset());
   }
 }
