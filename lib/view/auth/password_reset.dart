@@ -32,7 +32,7 @@ class _PasswordResetState extends State<PasswordReset> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(30),
+          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -40,7 +40,10 @@ class _PasswordResetState extends State<PasswordReset> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: SizedBox(
-                  child: Column(children: [
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 35),
                       child: Text.rich(TextSpan(
@@ -60,7 +63,7 @@ class _PasswordResetState extends State<PasswordReset> {
                   child: Form(
                 key: _formKey,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     widget.isForgotten
