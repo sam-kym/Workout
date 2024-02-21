@@ -14,15 +14,17 @@ class _CompleteProfileState extends State<CompleteProfile> {
   final _nameController = TextEditingController();
   final _phoneController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+
   //  gender
   String selectedGender = "";
   final genderOptions = ["Male", "Female", "Prefer not to Disclose"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             // mainAxisAlignment: MainAxisAlignment,,
@@ -31,7 +33,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
                 alignment: Alignment.center,
                 child: SizedBox(
                   child: Padding(
-                    padding: EdgeInsets.only(left: 35),
+                    padding: const EdgeInsets.only(left: 35),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -69,7 +71,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
                           borderRadius: BorderRadius.circular(150),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       const Align(
@@ -96,7 +98,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
                         hintText: "John Doe",
                         labelText: "Name",
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       const Align(
@@ -122,27 +124,28 @@ class _CompleteProfileState extends State<CompleteProfile> {
                         hintText: "Enter Phone Number",
                         labelText: "Phone Number",
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
-                      //   gender dropdown
-                      // DropdownButton<String>(
+                      // gender dropdown
+                      // DropdownButton(
                       //   value: selectedGender,
-                      //   items: genderOptions
-                      //       .map((option) => DropdownMenuItem(
-                      //           value: option, child: Text(option)))
-                      //       .toList(),
+                      //   icon: const Icon(Icons.keyboard_arrow_down_rounded),
+                      //   items: genderOptions.map((String option) {
+                      //     return DropdownMenuItem(
+                      //         value: option, child: Text(option));
+                      //   }).toList(),
                       //   onChanged: (value) {
                       //     setState(() {
                       //       selectedGender = value!;
                       //     });
                       //   },
                       //   hint: Text("Select"),
-                      // ),
-                      SizedBox(
+                      // ),+
+                      const SizedBox(
                         height: 15,
                       ),
-                      CustomButtons(
+                      const CustomButtons(
                         buttonName: "Complete Profile",
                       )
                     ],

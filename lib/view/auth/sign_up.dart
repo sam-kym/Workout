@@ -183,7 +183,9 @@ class _SignUpState extends State<SignUp> {
                     ? const CircularProgressIndicator()
                         : CustomButtons(
                       buttonName: "SignUp",
-                      onPressed: _readTerms?_registerUser:null,
+                      onPressed: ()async{
+
+                      },
                      ),
                   ],
                 ),

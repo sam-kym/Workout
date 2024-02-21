@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gym/utils/styles.dart';
 import 'package:gym/view/complete_profile.dart';
+import 'package:gym/view/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-        theme: appTheme, home: const CompleteProfile());
+        theme: appTheme,
+      home: const HomeScreen(),
+    );
   }
 }
