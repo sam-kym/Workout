@@ -16,8 +16,8 @@ class _CompleteProfileState extends State<CompleteProfile> {
   final _formKey = GlobalKey<FormState>();
 
   //  gender
-  String selectedGender = "";
-  final genderOptions = ["Male", "Female", "Prefer not to Disclose"];
+  String selectedGender = "Select";
+  final genderOptions = ["Select","Male", "Female", "Prefer not to Disclose"];
 
   @override
   Widget build(BuildContext context) {
@@ -128,20 +128,34 @@ class _CompleteProfileState extends State<CompleteProfile> {
                         height: 15,
                       ),
                       // gender dropdown
-                      // DropdownButton(
-                      //   value: selectedGender,
-                      //   icon: const Icon(Icons.keyboard_arrow_down_rounded),
-                      //   items: genderOptions.map((String option) {
-                      //     return DropdownMenuItem(
-                      //         value: option, child: Text(option));
-                      //   }).toList(),
-                      //   onChanged: (value) {
-                      //     setState(() {
-                      //       selectedGender = value!;
-                      //     });
-                      //   },
-                      //   hint: Text("Select"),
-                      // ),+
+                      Container(
+                        width: double.maxFinite,
+                        padding: const EdgeInsets.only(left: 15, right: 15),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(
+                            color: Colors.black
+                          )
+                        ),
+                        child: DropdownButton<String>(
+                          padding: const EdgeInsets.only(left: 15),
+                          value: selectedGender,
+                          elevation: 3,
+                          underline: Container(color: Colors.black,),
+                          icon: const Icon(Icons.keyboard_arrow_down_rounded, color: Colors.black,),
+                          items: genderOptions.map((String option) {
+                            return DropdownMenuItem(
+                                value: option,
+                                child: Text(option));
+                          }).toList(),
+                          onChanged: (String? value) {
+                            setState(() {
+                              selectedGender = value!;
+                            });
+                          },
+                          // hint: Text("Select"),
+                        ),
+                      ),
                       const SizedBox(
                         height: 15,
                       ),
