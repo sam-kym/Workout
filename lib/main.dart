@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gym/splash_screen/splash.dart';
 import 'package:gym/utils/styles.dart';
-import 'package:gym/view/complete_profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
         theme: appTheme,
-      home: const CompleteProfile(),
+      home: const SplashScreen(),
     );
   }
 }
